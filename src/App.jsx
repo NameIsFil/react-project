@@ -1,4 +1,5 @@
 import { UserNameInput } from "./components/UserNameInput.jsx";
+import { users } from "./components/users.js";
 import React, { useState } from "react";
 
 export default function App() {
@@ -12,10 +13,24 @@ export default function App() {
         }
     }
 
+    function RenderUsers() {
+        return (
+            <div>
+                <h1>Users:</h1>
+                    {users.map((user) => (
+                    <div key={user.id}>
+                        {user.name} age: {user.age}
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
     return (
         <div>
             <Title />
             <UserNameInput setName={setUserName} />
+            <RenderUsers />
         </div>
     );
 }
