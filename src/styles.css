@@ -1,0 +1,18 @@
+* {
+    font-family: "Montserrat";
+}
+
+h1 {
+    font-family: "Montserrat SemiBold";
+    font-size: 2vh;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+}
+
+.row {
+    width: 300px;
+    height: 100px;
+}

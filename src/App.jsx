@@ -1,5 +1,8 @@
 import { UserNameInput } from "./components/UserNameInput.jsx";
+import { TicTacToe } from "./components/TicTacToe.jsx";
+import { MyButton } from "./components/MyButton.jsx";
 import { users } from "./components/users.js";
+import "./styles.css";
 import React, { useState } from "react";
 
 export default function App() {
@@ -26,11 +29,17 @@ export default function App() {
         )
     }
 
+
+
     return (
         <div>
             <Title />
             <UserNameInput setName={setUserName} />
             <RenderUsers />
+            <MyButton />
+            <MyButton />
+            <br />
+            <TicTacToe />
         </div>
     );
 }

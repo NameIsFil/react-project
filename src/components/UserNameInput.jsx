@@ -14,7 +14,7 @@ export function UserNameInput(props) {
 
     return (
         <div>
-            <label>your name:</label>
+            <label>your name: </label>
             <input onInput={handleInputChange} value={inputValue} />
             <button onClick={handleDisplayNameClick}>display name</button>
         </div>
