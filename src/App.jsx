@@ -1,5 +1,5 @@
 import { UserNameInput } from "./components/UserNameInput.jsx";
-import { FetchData } from "./components/Dashboard.jsx";
+import { Dashboard } from "./components/Dashboard.jsx";
 import { TicTacToe } from "./components/TicTacToe.jsx";
 import { MyButton } from "./components/MyButton.jsx";
 import { users } from "./components/users.js";
@@ -39,7 +39,8 @@ export default function App() {
             <MyButton />
             <br />
             <TicTacToe />
-            <FetchData />
+            <br />
+            <Dashboard />
         </div>
     );
 }
