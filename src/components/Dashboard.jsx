@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export function Dashboard() {
     const [usersData, setUsersData] = useState();
+    const [userId, setUserId] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -20,19 +21,26 @@ export function Dashboard() {
         fetchData();
     }, []);
 
+    function handleOnClick(i) {
+        setUserId(i);
+    }
+
     if (!usersData) {
         return null;
     }
     return usersData.map((user) =>
-        <button onClick={ () => UserPosts(user.id) } key={ user.id }>{ user.name }</button>
+        <>
+            <button onClick={ () => handleOnClick(user.id) } key={ user.id }>{ user.name }</button>
+            <UserPosts />
+        </>
     );
 }
 
-async function UserPosts(userId) {
+function UserPosts(userId) {
     const [postsData, setPostsData] = useState();
 
     useEffect(() => {
-        async function fetchData(userId) {
+        async function fetchData() {
             const [postsResponse] =
                 await Promise.all([
                     fetch(
@@ -57,3 +65,4 @@ async function UserPosts(userId) {
         </>
     ));
 }
+
